@@ -138,7 +138,61 @@
       <item row="0" column="1">
        <layout class="QVBoxLayout" name="verticalLayout_2" stretch="3,1">
         <item>
-         <layout class="QGridLayout" name="gridLayout_2" rowstretch="2,2,4,2,1" columnstretch="50,50">
+         <layout class="QGridLayout" name="gridLayout_2" rowstretch="2,2,4,2,1" columnstretch="50,0">
+          <item row="3" column="1">
+           <widget class="QWidget" name="colorDisplay" native="true">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(0, 0, 0)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="putvoxel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>voxel</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QPushButton" name="putcylinder">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>cilindro</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="cLabel">
+              <property name="text">
+               <string>raio:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDoubleSpinBox" name="crad">
+              <property name="value">
+               <double>5.000000000000000</double>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
           <item row="0" column="1">
            <widget class="QPushButton" name="putbox">
             <property name="sizePolicy">
@@ -173,13 +227,6 @@
             </item>
            </layout>
           </item>
-          <item row="3" column="1">
-           <widget class="QWidget" name="colorDisplay" native="true">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(0, 0, 0)</string>
-            </property>
-           </widget>
-          </item>
           <item row="1" column="1">
            <widget class="QPushButton" name="putellipsoid">
             <property name="sizePolicy">
@@ -190,32 +237,6 @@
             </property>
             <property name="text">
              <string>elipsóide</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QPushButton" name="putvoxel">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>voxel</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QPushButton" name="putcylinder">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>cilindro</string>
             </property>
            </widget>
           </item>
@@ -299,27 +320,6 @@
                </widget>
               </item>
              </layout>
-            </item>
-           </layout>
-          </item>
-          <item row="4" column="0">
-           <layout class="QHBoxLayout" name="horizontalLayout_10">
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QLabel" name="cLabel">
-              <property name="text">
-               <string>raio:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QDoubleSpinBox" name="crad">
-              <property name="value">
-               <double>5.000000000000000</double>
-              </property>
-             </widget>
             </item>
            </layout>
           </item>

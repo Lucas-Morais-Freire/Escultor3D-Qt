@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <cmath>
 
 Sculptor::Sculptor(int _nx, int _ny, int _nz) {
     nx = _nx; ny = _ny; nz = _nz;
@@ -56,9 +57,15 @@ void Sculptor::cutVoxel(int x, int y, int z) {
 
 
 void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1) {
-    for (int i = x0; i <= x1; i++) {
-        for (int j = y0; j <= y1; j++) {
-            for (int k = z0; k <= z1; k++) {
+    int ax = std::min(x0, x1);
+    int bx = std::max(x0, x1);
+    int ay = std::min(y0, y1);
+    int by = std::max(y0, y1);
+    int az = std::min(z0, z1);
+    int bz = std::max(z0, z1);
+    for (int i = ax; i <= bx; i++) {
+        for (int j = ay; j <= by; j++) {
+            for (int k = az; k <= bz; k++) {
                 if (0 <= i && i < nx && 0 <= j && j < ny && 0 <= k && k < nz) {
                     v[i][j][k].isOn = true;
                     v[i][j][k].r = r;
@@ -227,7 +234,6 @@ void Sculptor::writeOFF(const char* filename) {
     if (!fout.is_open()) {
         exit(1);
     }
-    std::cout << "bruh\n";
     unsigned int vcount = 0;
     for (int i = 0; i < nx; i++) {
         for (int j = 0; j < ny; j++) {

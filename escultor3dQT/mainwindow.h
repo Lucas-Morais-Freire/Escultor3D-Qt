@@ -22,5 +22,12 @@ public slots:
     void changeYSize();
     void changeZSize();
     void changeZLayer();
+    void voxelMode();
+    void boxMode();
+    void sphereMode();
+    void ellipsoidMode();
+    void cylinderMode();
+    void changeColor();
+    void showColor();
 };
 #endif // MAINWINDOW_H

@@ -23,6 +23,18 @@ public:
   }
 
   void setColor(float _r, float _g, float _b, float _a);
+  float getR() {
+      return r;
+  }
+  float getG() {
+      return g;
+  }
+  float getB() {
+      return b;
+  }
+  float getA() {
+      return a;
+  }
   void putVoxel(int x, int y, int z);
   void cutVoxel(int x, int y, int z);
   void putBox(int x0, int x1, int y0, int y1, int z0, int z1);
