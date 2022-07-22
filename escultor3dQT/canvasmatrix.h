@@ -1,0 +1,47 @@
+#ifndef CANVASMATRIX_H
+#define CANVASMATRIX_H
+
+#include <QPen>
+#include <QBrush>
+#include <QPainter>
+#include <QWidget>
+#include "sculptor.h"
+
+class CanvasMatrix : public QWidget {
+    Q_OBJECT
+private:
+    int xsize, ysize, zsize, zlayer, h, w, xstart, ystart;
+    bool lPressed, rPressed, firstClick;
+    int firstCoords[3];
+    int rad, rx, ry, rz;
+    float rc;
+    Voxel placeHolder;
+    Sculptor* s;
+    short unsigned int paintMode;
+public:
+    explicit CanvasMatrix(QWidget *parent = nullptr);
+    ~CanvasMatrix();
+    void paintEvent(QPaintEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+    void setXSize(int nx);
+    void setYSize(int ny);
+    void setZSize(int nz);
+    void setZLayer(int z);
+    void drawGrid();
+    void changeMode(short unsigned int mode);
+public slots:
+    void saveDrawing();
+    void viewDrawing();
+    void changeColor(float r, float g, float b);
+    void changeRadius(int _rad);
+    void changeXRadius(int _rx);
+    void changeYRadius(int _ry);
+    void changeZRadius(int _rz);
+    void changeCRadius(double _rc);
+signals:
+    void askCommand(QString);
+};
+
+#endif // CANVASMATRIX_H
